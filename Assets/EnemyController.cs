@@ -28,6 +28,9 @@ public class EnemyController : MonoBehaviour
         float r2 = 1.0f;
         if (d < r1 + r2)
         {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().DecreaseHp();
+
             Destroy (gameObject);
         }
 
