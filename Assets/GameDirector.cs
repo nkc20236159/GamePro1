@@ -2,28 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using Unity.VisualScripting;
 
 public class GameDirector : MonoBehaviour
 {
     GameObject Time_gauge;
-    GameObject TimerText;
-    float time = 0000000f;
+    
+    GameObject Timersa;
+
+    
+     
     void Start()
     {
         this.Time_gauge = GameObject.Find("Time_gauge");
-        this.TimerText = GameObject.Find("kyori");
+        
+        this.Timersa = GameObject.Find("Time_gauge");
     }
 
     void Update()
     {
-        this.time += 000001;
-        this.TimerText.GetComponent<TextMeshProUGUI>().text = this.time.ToString();
+        
+        
+        this.Timersa.GetComponent<Image>().fillAmount -= 0.0002f;
+
     }
 
     public void DecreaseHp()
     {
         
-        
+        this.Time_gauge.GetComponent<Image>().fillAmount -= 0.1f;
+
     }
+    
 }
