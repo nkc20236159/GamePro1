@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class GameDirector2 : MonoBehaviour
 {
@@ -23,4 +24,5 @@ public class GameDirector2 : MonoBehaviour
         textComponent.text = "km";
         this.TimerText.GetComponent<TextMeshProUGUI>().text = this.time.ToString();
     }
+   
 }

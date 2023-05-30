@@ -11,5 +11,7 @@ public class TitleDirector : MonoBehaviour
         {
             SceneManager.LoadScene("GameScene");
         }
+        
     }
+    
 }

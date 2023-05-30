@@ -30,8 +30,11 @@ public class EnemyController : MonoBehaviour
         {
             GameObject director = GameObject.Find("GameDirector");
             director.GetComponent<GameDirector>().DecreaseHp();
-
+            
             Destroy (gameObject);
+
+            GameObject director3 = GameObject.Find("lastDirector");
+            director3.GetComponent<lastDirector>().DecreaseHp();
         }
 
     }

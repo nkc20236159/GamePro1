@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.VisualScripting;
 
+
 public class GameDirector : MonoBehaviour
 {
     GameObject Time_gauge;
@@ -15,7 +16,6 @@ public class GameDirector : MonoBehaviour
     void Start()
     {
         this.Time_gauge = GameObject.Find("Time_gauge");
-        
         this.Timersa = GameObject.Find("Time_gauge");
     }
 
@@ -24,7 +24,7 @@ public class GameDirector : MonoBehaviour
         
         
         this.Timersa.GetComponent<Image>().fillAmount -= 0.0002f;
-
+        
     }
 
     public void DecreaseHp()
@@ -33,5 +33,4 @@ public class GameDirector : MonoBehaviour
         this.Time_gauge.GetComponent<Image>().fillAmount -= 0.1f;
 
     }
-    
 }
