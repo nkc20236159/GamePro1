@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 
 public class EnemyController : MonoBehaviour
 {
-    GameObject MyChar_0;
+    GameObject Player;
     private void Start()
     {
-        this.MyChar_0 = GameObject.Find("MyChar_0");
+        this.Player = GameObject.Find("Player");
     }
 
     void Update()
@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
         }
 
         Vector2 p1 = transform.position;
-        Vector2 p2 = this.MyChar_0.transform.position;
+        Vector2 p2 = this.Player.transform.position;
         Vector2 dir = p1 - p2;
         float d = dir.magnitude;
         float r1 = 0.5f;
@@ -33,8 +33,6 @@ public class EnemyController : MonoBehaviour
             
             Destroy (gameObject);
 
-            GameObject director3 = GameObject.Find("lastDirector");
-            director3.GetComponent<lastDirector>().DecreaseHp();
         }
 
     }

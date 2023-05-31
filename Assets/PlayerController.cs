@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //アニメーターコンポーネントを保存する変数
+    Animator anim;
+
     void Start()
     {
         Application.targetFrameRate = 60;
+
+        //アニメーターコンポーネントをanim変数に保存
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(0, -0.2f, 0);
         }
@@ -30,6 +34,19 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(0.2f, 0, 0);
         }
+        float y = Input.GetAxisRaw("Vertical");
+
+        if (y == 0)
+        {
+            anim.Play("Player");
+        }
+        else if (y == 1)
+        {
+            anim.Play("PlayerL");
+        }
+        else
+        {
+            anim.Play("PlayerR");
+        }
     }
-    
 }

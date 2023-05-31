@@ -1,34 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class lastDirector : MonoBehaviour
+public class LastDirector : MonoBehaviour
 {
     GameObject nagai;
     // Start is called before the first frame update
     void Start()
     {
         this.nagai = GameObject.Find("tamesi");
+        int m_FillAmount = 1;
+        if(m_FillAmount == 0)
+        {
+            Debug.Log("owari");
+            SceneManager.LoadScene("TitleScene");
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.Translate(1, 0, 0);
-
-
-
+        
     }
 
-    public void DecreaseHp()
-    {
-        this.nagai.transform.Translate(600, 0, 0);
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("owari");
-        SceneManager.LoadScene("TitleScene");
-    }
 }
