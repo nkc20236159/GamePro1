@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,20 +10,42 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class LastDirector : MonoBehaviour
 {
     GameObject nagai;
-    // Start is called before the first frame update
+    float m_FillAmount;
+    GameObject Time_gauge;
+    GameObject timerText;
+    float time = 100.0f;
     void Start()
     {
+        Application.targetFrameRate = 60;
         this.nagai = GameObject.Find("tamesi");
-        int m_FillAmount = 1;
-        if(m_FillAmount == 0)
+        this.Time_gauge = GameObject.Find("Time_gauge");
+        this.timerText = GameObject.Find("time");
+    }
+    void Update()
+    {
+        this.time -= Time.deltaTime;
+        this.timerText.GetComponent<TextMeshProUGUI>().text = this.time.ToString("F1");
+        transform.Translate(0, 0, 0);
+        if (time <= 0)
         {
             Debug.Log("owari");
             SceneManager.LoadScene("TitleScene");
         }
     }
-    private void Update()
+    
+
+    public void Translate()
     {
-        
+        this.nagai.transform.Translate(0, 0, 0);
+        this.time -= 10.0f;
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("owari");
+        SceneManager.LoadScene("TitleScene");
     }
 
 }

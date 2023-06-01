@@ -33,6 +33,9 @@ public class EnemyController : MonoBehaviour
             
             Destroy (gameObject);
 
+            GameObject director2 = GameObject.Find("tamesi");
+            director2.GetComponent<LastDirector>().Translate();
+
         }
 
     }
