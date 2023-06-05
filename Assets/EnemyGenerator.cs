@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour
 {
     public GameObject Enemy_0Pre;
-    float span = 1.0f;
+    float span = 0.5f;
     float delta = 0;
     void Update()
     {

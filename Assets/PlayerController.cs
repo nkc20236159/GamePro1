@@ -48,5 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             anim.Play("PlayerR");
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().DecreaseHp();;
+        }
     }
 }

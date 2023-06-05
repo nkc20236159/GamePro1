@@ -11,21 +11,21 @@ public class GameDirector : MonoBehaviour
     
     GameObject Timersa;
     GameObject timerText;
-    float time = 60.0f;
+    //float time = 60.0f;
     
      
     void Start()
     {
         this.Time_gauge = GameObject.Find("Time_gauge");
         this.Timersa = GameObject.Find("Time_gauge");
-        
+        Application.targetFrameRate = 60;
     }
 
     void Update()
     {
 
 
-        this.Timersa.GetComponent<Image>().fillAmount -= 0.00017f;
+        this.Timersa.GetComponent<Image>().fillAmount -= 0.000166f;
     }
 
     public void DecreaseHp()

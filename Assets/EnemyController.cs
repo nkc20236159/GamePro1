@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
         Vector2 dir = p1 - p2;
         float d = dir.magnitude;
         float r1 = 0.5f;
-        float r2 = 1.0f;
+        float r2 = 0.6f;
         if (d < r1 + r2)
         {
             GameObject director = GameObject.Find("GameDirector");
